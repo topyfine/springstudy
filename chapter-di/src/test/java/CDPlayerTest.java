@@ -1,6 +1,7 @@
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import soundsystem.CompactDisc;
@@ -15,10 +16,15 @@ public class CDPlayerTest {
     @Autowired
     private CompactDisc compactDisc;
 
+    @Autowired
+    Environment environment;
+
     @Test
     public void testCompentScan() {
         assertNotNull(compactDisc);
 //        compactDisc.play();
+        assertNotNull(environment);
+        assertEquals("1234", environment.getProperty("password"));
     }
 
 }
