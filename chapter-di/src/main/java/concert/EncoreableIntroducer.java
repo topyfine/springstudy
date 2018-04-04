@@ -8,7 +8,8 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class EncoreableIntroducer {
     /**
-     * 被通知类引入新方法
+     * 被通知类引入新方法,
+     * 非必须是static
      */
     @DeclareParents(value = "concert.Performance+", defaultImpl = DefaultEncoreableImpl.class)
     public static Encoreable encoreable;
