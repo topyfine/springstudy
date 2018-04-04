@@ -1,3 +1,5 @@
+import concert.Audience;
+import concert.Encoreable;
 import concert.Performance;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,9 +16,15 @@ public class AopTest {
     @Autowired
     Performance performance;
 
+    @Autowired
+    Audience audience;
+
     @Test
     public void testAop() {
         assertNotNull(performance);
-        performance.perform();
+//        performance.perform();
+        performance.perform("arts");
+        //方法增强
+        ((Encoreable) performance).encore();
     }
 }

@@ -10,4 +10,9 @@ public class MagicPerformance implements Performance {
         /*Exception exception = null;
         exception.getLocalizedMessage();*/
     }
+
+    @Override
+    public void perform(String title) {
+        System.out.println(">>> perform " + title + ".");
+    }
 }
