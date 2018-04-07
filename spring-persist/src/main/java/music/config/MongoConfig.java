@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class MongoConfig extends AbstractMongoConfiguration {
     @Override
     protected String getDatabaseName() {
-        return "OrderDB";
+        return "develop";
     }
 
     @Override

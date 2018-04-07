@@ -9,6 +9,8 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Set;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {MongoConfig.class})
 public class MongoTest {
@@ -19,5 +21,7 @@ public class MongoTest {
     @Test
     public void testMongo() {
         Assert.assertNotNull(mongoTemplate);
+        Set<String> names = mongoTemplate.getDb().getCollectionNames();
+        Assert.assertEquals(0, names.size());
     }
 }
