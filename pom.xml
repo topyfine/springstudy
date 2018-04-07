@@ -12,6 +12,7 @@
         <module>chapter-di</module>
         <module>chapter-mvc</module>
         <module>spring-persist</module>
+        <module>chapter-rmi</module>
     </modules>
 
     <properties>
